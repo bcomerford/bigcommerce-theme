@@ -1,0 +1,9 @@
+<li class="breadcrumb-item{{#if @last}} is-active{{/if}}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+  {{#unless @first}}&rsaquo; {{/unless}}
+  {{#if url}}
+  <a class="breadcrumb-label" href="{{url}}"><span itemprop="name">{{name}}</span></a>
+  {{else}}
+  <span class="breadcrumb-label" itemprop="name">{{name}}</span>
+  {{/if}}
+
+</li>

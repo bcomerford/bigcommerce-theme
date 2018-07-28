@@ -1,0 +1,1 @@
+{"components/widget-instagram":"<section class=\"layout-module social-widget-instagram\">\n  <h2 class=\"section-title\">{{lang 'instagram.label'}}</h2>\n  <div class=\"widget-instagram\" data-image-count=\"{{image_count}}\"></div>\n</section>"}

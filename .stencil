@@ -1,0 +1,12 @@
+{
+  "normalStoreUrl": "http://www.sacred-art.mybigcommerce.com/",
+  "port": 3000,
+  "clientId": "mkni8r1e7uqzvgth616l3w0733bzxic",
+  "accessToken": "imrkoxff4obfktwq9u3k93ntkatrbb2",
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  }
+}

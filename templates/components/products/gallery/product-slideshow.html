@@ -1,0 +1,13 @@
+
+{{#each product.images}}
+  {{#if ../isolate-image}}<div class="single-product-slideshow-image">{{/if}}
+
+  <img
+    {{#unless ../isolate-image}}class="single-product-slideshow-image"{{/unless}}
+    data-slide-position="{{@index}}"
+    data-image-distance
+    src="{{getImage this '600x1200'}}"
+    alt="{{this.alt}}" />
+
+  {{#if ../isolate-image}}</div>{{/if}}
+{{/each}}

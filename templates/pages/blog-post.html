@@ -1,0 +1,33 @@
+{{#partial "page"}}
+{{#if blog.post.thumbnail}}
+  {{> components/blog-banner blog.post.thumbnail}}
+{{/if}}
+
+{{> components/common/page-header list=breadcrumbs page_title=blog.post.title}}
+
+<article class="blog-container" itemscope itemtype="http://schema.org/BlogPosting">
+  <meta itemprop="headline" content="{{blog.post.title}}">
+  <meta itemprop="url" content="{{blog.post.url}}">
+
+  {{#if blog.post.thumbnail}}
+    <meta itemprop="image" content="{{getImage blog.post.thumbnail '600x600'}}">
+  {{/if}}
+
+  <section class="layout-module">
+
+    <article class="blog-post-sidebar">
+      {{> components/blog/blog-sidebar}}
+    </article>
+
+    <div class="blog-post-text rte">
+      {{> components/blog/blog-post blog.post add-this=settings.add_this}}
+    </div>
+
+  </section>
+
+
+</article>
+
+{{/partial}}
+
+{{> layout/base}}

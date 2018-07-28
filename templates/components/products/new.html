@@ -1,0 +1,18 @@
+<section class="layout-module products-space-above">
+  <h2 class="section-title">{{lang 'product_new.heading'}}</h2>
+
+  {{#if grid.length}}
+    <div class="product-grid-container grid-masonry layout-grid-of-{{column_count}}">
+      <div class="layout-grid-sizer"></div>
+      <div class="layout-grid-gutter"></div>
+
+      {{#each grid}}
+        {{> components/products/product-item this show_quick_shop=../../show_quick_shop default_image=../../default_image}}
+      {{/each}}
+
+    </div>
+  {{else}}
+    <p>{{lang 'product_new.no_products'}}</p>
+  {{/if}}
+
+</section>

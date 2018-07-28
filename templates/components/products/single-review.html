@@ -1,0 +1,23 @@
+<div class="layout-grid-item" itemscope itemprop="review" itemtype="http://schema.org/Review">
+  <div class='sr-only' itemprop="itemReviewed" itemscope itemtype="http://schema.org/Product" aria-hidden="true">
+    <span itemprop="name">{{product_title}}</span>
+  </div>
+  <span class="rating-stars-readonly" aria-hidden="true" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+    {{> components/common/rating rating=rating}}
+    <meta class="sr-only" itemprop="ratingValue" content="{{rating}}">
+  </span>
+
+  <h3 class="single-review-title" itemprop="name">{{title}}</h3>
+
+  <span class="single-review-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    {{#if name}}
+      {{lang 'product.reviews.posted_on_by' date=date name=name}}
+    {{else}}
+      {{lang 'product.reviews.posted_on' date=date}}
+    {{/if}}
+    <meta itemprop="name" content="{{name}}">
+  </span>
+
+  <p class="single-review-text" itemprop="reviewBody">{{{this.text}}}</p>
+
+</div>
