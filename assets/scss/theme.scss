@@ -7928,8 +7928,15 @@ $auth-font-size: $account-font-size !default;
 }
 
 .header-branding {
+  float: left;
   margin: 0 auto;
+  margin-left: 0;
   width: 200px;
+
+  @include breakpoint(l-up) {
+    float: none;
+    margin-left: auto;
+  }
 
   .alternate-header & {
 
@@ -7941,9 +7948,11 @@ $auth-font-size: $account-font-size !default;
 }
 
 .header-navigation {
+  float: right;
   transition: width 0.5s $ease-out-quad;
 
   @include breakpoint(l-up) {
+    float: none;
     height: $header-height-mobile;
     max-height: $header-height-mobile;
   }
@@ -10970,16 +10979,18 @@ table.geotrust-ssl-seal-table {
 /* scss-combine:components/navigation/navigation-header */
 
 .header-navigation-item {
-  text-align: right;
-
   &.navigation-item-primary {
-    display: inline-block;
-    text-align: center;
+    text-align: right;
 
     @include breakpoint(m-up) {
       margin: 0;
       padding: 0 .7em;
       border: none;
+    }
+
+    @include breakpoint(l-up) {
+      display: inline-block;
+      text-align: center;  
     }
   }
 
