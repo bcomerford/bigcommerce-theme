@@ -5381,9 +5381,9 @@ $page-padding-bottom: $gutter * 4;
 
 // -- Main Navigation -- //
 $header-height-mobile: 60px;
-$header-height-desktop: 180px;
+$header-height-desktop: 120px;
 $header-padding: 15px;
-$header-logo-max-width: 250px;
+$header-logo-max-width: 200px;
 
 // -- Slideout Navigation -- //
 $slide-navigation-regular: 150px;
@@ -6242,7 +6242,7 @@ body {
   }
 
   @include breakpoint(l-up) {
-    margin-top: $header-height-desktop;
+    margin-top: 160px; // $header-height-desktop;
 
     .has-carousel & {
       margin-top: 0;
@@ -7901,10 +7901,8 @@ $auth-font-size: $account-font-size !default;
 
 .header-container {
   @extend %clearfix;
-  display: table;
   padding-right: 0;
   padding-left: 0;
-  table-layout: fixed;
 
   .main-nav-open & {
     max-width: 100%;
@@ -7914,12 +7912,8 @@ $auth-font-size: $account-font-size !default;
 .header-branding,
 .header-navigation {
   position: relative;
-  display: table-cell;
-  float: left;
   height: $header-height-mobile;
   max-height: $header-height-mobile;
-  vertical-align: middle;
-  box-sizing: border-box;
   transition: width 0.5s $ease-out-quad;
 
   @include breakpoint(l-up) {
@@ -7934,29 +7928,31 @@ $auth-font-size: $account-font-size !default;
 }
 
 .header-branding {
-  width: 70%;
-  padding-right: $gutter;
-  padding-left: $gutter;
+  margin: 0 auto;
+  width: 200px;
 
   .alternate-header & {
+
     @include breakpoint(l-up) {
-      width: 30%;
+      position: absolute;
+      z-index: 50;
     }
   }
 }
 
 .header-navigation {
-  float: right;
-  width: 30%;
   transition: width 0.5s $ease-out-quad;
 
   @include breakpoint(l-up) {
-    padding-right: $gutter;
+    height: $header-height-mobile;
+    max-height: $header-height-mobile;
   }
 
   .alternate-header & {
+    
+
     @include breakpoint(l-up) {
-      width: 70%;
+      
     }
   }
 
@@ -7998,11 +7994,8 @@ $auth-font-size: $account-font-size !default;
 }
 
 .header-logo-image {
-  top: 50%;
+  margin-top: 12px;
   max-width: $header-logo-max-width;
-  padding-top: $gutter;
-  padding-bottom: $gutter;
-  transform: translateY(-50%);
 }
 
 .header-logo-text {
@@ -8012,6 +8005,7 @@ $auth-font-size: $account-font-size !default;
   font-family: $store-title-font;
   font-size: 20px;
   font-weight: $store-title-weight;
+  letter-spacing: -1px;
   line-height: 60px;
   color: $store-title-color;
   text-overflow: ellipsis;
@@ -8020,7 +8014,7 @@ $auth-font-size: $account-font-size !default;
   white-space: nowrap;
 
   @include breakpoint(l-up) {
-    font-size: 26px;
+    font-size: 22px;
   }
 
   &.no-image {
@@ -8034,11 +8028,22 @@ $auth-font-size: $account-font-size !default;
       transform: translateY(0);
     }
   }
+
+  &:before {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    vertical-align: middle;
+    background: url("../images/logo-round.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    content: "";
+  }
 }
 
 .main-header-menu {
-  padding-top: $gutter;
-  padding-bottom: $gutter;
+  padding-top: 0;
+  padding-bottom: 12px;
 
   .alternate-header & {
     width: 100%;
@@ -10967,6 +10972,17 @@ table.geotrust-ssl-seal-table {
 .header-navigation-item {
   text-align: right;
 
+  &.navigation-item-primary {
+    display: inline-block;
+    text-align: center;
+
+    @include breakpoint(m-up) {
+      margin: 0;
+      padding: 0 .7em;
+      border: none;
+    }
+  }
+
   > a {
     // scss-lint:disable VariableForProperty
     display: inline-block;
@@ -11056,11 +11072,11 @@ table.geotrust-ssl-seal-table {
   .alternate-header & {
     display: block;
     width: 100%;
-    text-align: right;
   }
 
   @include breakpoint(l-up) {
     display: block;
+    text-align: center;
   }
 
   @include breakpoint(m-down) {
@@ -11091,10 +11107,11 @@ table.geotrust-ssl-seal-table {
 
 .navigation-item-primary {
   // scss-lint:disable DeclarationOrder
+  display: inline-block;
+  margin-left: $gutter;
 
   .alternate-header & {
-    display: inline-block;
-    margin-left: $gutter;
+    
   }
 
   .alternate-header.main-nav-open & {
@@ -11910,7 +11927,10 @@ table.geotrust-ssl-seal-table {
 
   @include breakpoint(m-up){
     max-width: 50%;
+    margin-top: 0;
     margin-left: 0;
+    position: absolute;
+    bottom: 25%;
   }
 }
 

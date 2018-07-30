@@ -7,8 +7,8 @@
   },
   "brands": {
     "empty": "This brand contains no products.",
-    "label": "Brands",
-    "view_brands": "View all brands"
+    "label": "Artists",
+    "view_brands": "View all artists"
   },
   "cart": {
     "items": "{NUM, plural, =0{(0 items)} one {(# item)} other {(# items)}}",
