@@ -1,7 +1,7 @@
 {
   "name": "Fortune",
   "description": "Fortune is a standout theme for cutting-edge online stores. Customers will be transfixed by its striking hero area, which puts your imagery on full display, along with its sleek navigation and unique product grid. Ideal for small-to-medium-sized catalogs, Fortune has everything you need to command and convert shoppers.",
-  "version": "1.16.5",
+  "version": "1.17.0-rc.1",
   "private": true,
   "dependencies": {
     "@bigcommerce/stencil-utils": "^1.0.9",
